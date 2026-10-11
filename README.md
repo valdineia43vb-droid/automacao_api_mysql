@@ -19,3 +19,18 @@ O projeto cobre fluxos essenciais de manipulação de dados utilizando operaçõ
 1. **Validação de Cadastro (Persistência DML):** Dispara um payload de criação via API e executa uma query `SELECT` com parâmetros dinâmicos para assegurar a gravação íntegra do preço e estoque no banco.
 2. **Atualização de Estoque (Mutação de Estado):** Pré-configura um cenário inserindo um registro via SQL, consome o endpoint correspondente e valida a alteração real do saldo via comando `UPDATE`.
 3. **Cenário Negativo (Integridade de Dados):** Envia dados corrompidos para a API, garante o retorno de um erro controlado (`400 Bad Request`) e valida via SQL que o banco de dados permaneceu protegido e sem registros inválidos.
+
+## 🚀 Como Executar os Testes
+
+Para clonar o repositório e rodar a suíte de automação localmente, siga o passo a passo abaixo:
+
+1. **Instale as dependências do projeto:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Execute a suíte de testes com o Pytest:**
+   ```bash
+   pytest -s
+   ```
+   *(O parâmetro `-s` permite visualizar os logs de sucesso personalizados de cada cenário diretamente no seu console).*
